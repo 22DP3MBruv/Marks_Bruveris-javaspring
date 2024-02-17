@@ -1,16 +1,21 @@
 package rvt;
 
-public class Student {
-    public String name;
-    public String surname;
-    public String email;
-    public String group;
+// https://github.com/VadimsMalickis/java-template/blob/class-work/src/main/java/rvt/Student.java
 
+import java.time.LocalDate;
 
-    public Student(String name, String surname, String email, String group) {
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-        this.group = group;
-    }
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Student extends User {
+    
+    
 }
