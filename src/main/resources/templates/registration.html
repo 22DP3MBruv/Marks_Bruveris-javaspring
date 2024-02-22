@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <title>Registration</title>
+</head>
+<body>
+    <form action="" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" name="name" id="name" placeholder="Enter your name" required>
+        <label for="surname">Name:</label><br>
+        <input type="text" name="surname" id="surname" placeholder="Enter your surname" required>
+
+
+        <label for="password">password:</label><br>
+        <input type="password" name="password" id="password" placeholder="Enter the password" required pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$">
+        <input type="submit">
+    </form>
+</body>
+</html>

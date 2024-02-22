@@ -27,14 +27,16 @@ public class User {
     @NotEmpty
     private String surname;
     private int age;
-    private String password;
     private LocalDate birthday;
     private String gender;
     private boolean married;
     private String note;
     private String email;
 
-    private String group;
+    @NotEmpty
+    @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$", message = "Must have at least one letter, number and special character")
+    private String password;
+    
     public String toString() {
         return String.format(
                 "{%s, %s, %s, %s, %s, %s, %s, %s, %s, %s}",
@@ -46,7 +48,7 @@ public class User {
                 this.gender,
                 this.married,
                 this.note,
-                this.email,
-                this.group);
+                this.email
+                );
     }
 }

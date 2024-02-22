@@ -5,9 +5,14 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import jakarta.validation.Valid;
 
 @Controller
 public class DefaultController {
@@ -46,7 +51,7 @@ public class DefaultController {
     @GetMapping(value = "/register")
     public ModelAndView register() {
         ModelAndView modelAndView = new ModelAndView("register");
-
+        
         
         return modelAndView;
     }
@@ -59,6 +64,20 @@ public class DefaultController {
         System.out.println(student.isMarried());
 
         return modelAndView;
+    }
+    
+    @PostMapping(value = "/registration")
+    public String registration(@Valid @ModelAttribute("User") User user, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "registration/registration-page";
+        }
+
+      
+
+        // Save Student object to CSV
+        
+
+        return "redirect:/register?success";
     }
     
 }

@@ -5,6 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.Test;
 
+import rvt.Book;
+import rvt.Box;
+import rvt.CD;
 import rvt.Money;
 
 public class MoneyTest {
@@ -55,5 +58,22 @@ public class MoneyTest {
         Money mon2 = new Money(5, 50);
 
         assertEquals(mon1, mon2);
+    }
+
+    @Test
+    public void boxTest() {
+        Box box = new Box(10);
+
+        box.add(new Book("Fyodor Dostoevsky", "Crime and Punishment", 2)) ;
+        box.add(new Book("Robert Martin", "Clean Code", 1));
+        box.add(new Book("Kent Beck", "Test Driven Development", 0.7));
+        
+        box.add(new CD("Pink Floyd", "Dark Side of the Moon", 1973));
+        box.add(new CD("Wigwam", "Nuclear Nightclub", 1975));
+        box.add(new CD("Rendezvous Park", "Closer to Being Here", 2012));
+        
+        System.out.println(box);
+        
+        assertEquals("Box: 6 items, total weight 4.0 kg", box);
     }
 }
